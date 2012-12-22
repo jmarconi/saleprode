@@ -1,0 +1,48 @@
+{% extends 'JmSaleBundle:Default:admin-base.html.twig' %}
+{% block body %}
+<h1>Apuesta</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Torneo</th>
+            <td>{{ entity.partido.fecha.torneo.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Fecha</th>
+            <td>{{ entity.partido.fecha.orden }}</td>
+        </tr>
+        <tr>
+            <th>Partido</th>
+            <td>{{ entity.partido.titulo }}</td>
+        </tr>
+        <tr>
+            <th>Resultado</th>
+            <td>{{ entity.resultado }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_apuesta') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('admin_apuesta_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('admin_apuesta_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

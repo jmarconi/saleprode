@@ -1,0 +1,36 @@
+<header class='main-header'>
+  <div class='navbar navbar-fixed-top'>
+    <div class='navbar-inner'>
+      <div style='width: auto;' class='container'>
+        <div class='menu-principal' modulo='home'>
+          <div id='nav-menu pull-left' class='nav nav-pills' role='navigation'>
+            <a href='{{ path('home_amigos') }}'   rel="tooltip" title="Home">
+              <button class='btn btn-large'><i class='icon-gonza-home'></i></button>
+            </a>
+          </div>
+        </div>
+        
+        <ul class='nav nav-center'>
+          <li>
+            <a class='brand' href='#'><img src='/saleprode/web/bundles/jmsale/img/saleprode_images/logo-saleprode_header.png' /></a>
+          </li>
+        </ul>
+        
+
+        <div class='menu-principal' modulo='play'>
+          <div id='nav-menu ' class='nav nav-pills pull-right' role='navigation'>
+            <a href='{{ path('jugar_apuesta', { 'fecha_id': 1 }) }}'>
+                <button class='btn btn-large'><i class='icon-gonza-jugar'></i></button>
+              </a>
+              {#
+              <ul class='sm-dropdown-menu pull-right'>
+                <li><a tabindex='-1' href='{{ path('jugar_apuesta', { 'fecha_id': 1 }) }}'>Fecha Actual</a></li>
+                <li><a tabindex='-1' href='{{ path('jugar_listadofechas') }}'>LIstado fechas</a></li>
+              </ul>
+              #}
+          </div>
+        </div>
+      </div>
+   </div>
+ </div>
+</header>

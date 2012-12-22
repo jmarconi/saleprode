@@ -1,0 +1,21 @@
+{% block footer %}
+<footer class='navbar navbar-fixed-bottom'>
+  <div class='navbar-inner footer'>
+    <ul class='nav pull-right'>
+      {% block footerLeft %}
+
+      {% endblock %}
+    </ul>
+    <ul class='nav nav-center'>
+      <li>
+        <a class='brand' href='#'><img src='/saleprode/web/bundles/jmsale/img/saleprode_images/logo-saleprode_footer.jpg' width="141" height="24"  class="logo-footer"/></a>
+      </li>
+    </ul>
+    <ul class='nav pull-right'>
+      {% block footerRight %}
+
+      {% endblock %}
+    </ul>
+  </div>
+</footer>
+{% endblock %}

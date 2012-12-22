@@ -1,0 +1,36 @@
+{% extends 'JmSaleBundle:Default:base.html.twig' %}
+{% block title %}Hacé tu apuesta gato!{% endblock %}
+
+
+
+{% block body %}
+ 
+ <div class="row-fluid izquierda">
+    <div class="span12 descripcion-torneo">
+      <strong> Fecha: </strong>{{ fecha.orden}}<br />
+      <strong>Torneo:</strong> {{ fecha.torneo.nombre }}<br /></div>
+  </div>
+ 
+
+  {% include  'JmSaleBundle:Apuesta:block/grilla.html.twig' with {'fecha': fecha}%}
+{% endblock %}
+
+{% block footerLeft %}
+  <a href='{{ path('jugar_listadofechas') }}' rel="tooltip" title="Listado de Fechas">
+	<li class='active'>
+    <button class='btn-large fechas'>
+      <i class='icon-gonza-fechas'></i>
+    </button>
+  </li>
+	</a>
+{% endblock %}
+
+{% block footerRight %}
+	<a href='{{ path('jugar_listadofechas') }}' rel="tooltip" title="Guardar">
+  <li class='active'>
+    <button class='btn-large guardar'>
+      <i class='icon-gonza-guardar'></i>
+    </button>
+  </li>
+	</a>
+{% endblock %}

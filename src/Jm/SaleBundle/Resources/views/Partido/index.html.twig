@@ -1,0 +1,48 @@
+{% extends 'JmSaleBundle:Default:admin-base.html.twig' %}
+{% block body %}
+<h1>Partido list</h1>
+
+<table class="records_list table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Fecha</th>
+            <th>Local</th>
+            <th>Visitante</th>
+            <th>Orden</th>
+            <th>Estado</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('admin_partido_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.fecha.orden }}</td>
+            <td>{{ entity.local.nombre }}</td>            
+            <td>{{ entity.visitante.nombre }}</td>
+            <td>{{ entity.orden }}</td>
+            <td>{{ entity.estado }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('admin_partido_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_partido_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('admin_partido_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock %}

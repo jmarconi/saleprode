@@ -1,0 +1,18 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port:     ~
+    database_name:     sfsaleprode
+    database_user:     root
+    database_password: admin
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
+    
+    facebookAppId:     387946917960505
+    facebookAppSecret: 1303d40f55e900a49005be03e73cbfd1

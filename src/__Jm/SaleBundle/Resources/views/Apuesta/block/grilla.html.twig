@@ -1,0 +1,25 @@
+<div class="row-fluid izquierda">
+  <div class="span12 ">
+    <h4><i class="icon-gonza-ok">Seleccioná los <strong>resultados!</strong></i></h4>
+  </div>
+</div>
+
+<div class="row-fluid full-width ">
+  <div class="span12 barra-vs">
+    <img src="/saleprode/web/bundles/jmsale/img/saleprode_images/vs.png" class="versus"/>
+  </div>
+</div>
+
+{% for partido in partidos %}
+  <div class="row-fluid">
+       <div class="span4 izquierda"><button type="button" class="btn btn-large izquierda" alt="Estudiantes"><img src='{{ partido.local.getWebPath }}' /><span>{{ partido.local.nombreCorto }}</span></button></div>
+       <div class="span4"><button type="button" class="btn btn-large" alt="Empate"><span><i class="icon-gonza-empate"></i><strong>Empate!</strong></span></button></div>
+       <div class="span4 derecha"><button type="button" class="btn btn-large derecha" alt="Banfield"><span>{{ partido.visitante.nombreCorto }}</span><img src='{{ partido.visitante.getWebPath }}' /></div>
+  </div>
+ <div class="row-fluid">
+  	<div class="span12"><hr /></div>
+  </div>
+{% endfor %}
+
+
+ 

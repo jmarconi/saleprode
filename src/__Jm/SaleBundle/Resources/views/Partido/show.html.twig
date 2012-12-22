@@ -1,0 +1,52 @@
+{% extends 'JmSaleBundle:Default:admin-base.html.twig' %}
+{% block body %}
+<h1>Partido</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Fecha</th>
+            <td>{{ entity.fecha.orden }}</td>
+        </tr>
+        <tr>
+            <th>Local</th>
+            <td>{{ entity.local.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Visitante</th>
+            <td>{{ entity.visitante.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Orden</th>
+            <td>{{ entity.orden }}</td>
+        </tr>
+        <tr>
+            <th>Estado</th>
+            <td>{{ entity.estado }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_partido') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('admin_partido_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('admin_partido_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

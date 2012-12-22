@@ -1,0 +1,44 @@
+{% extends 'JmSaleBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    body{
+      padding-top: 34px;
+    }
+  </style>
+{% endblock %}
+
+{% block bodyClass %} admin {% endblock %}
+
+{% block header %}
+  <div class='navbar navbar-fixed-top'>
+    <div class='navbar-inner'>
+      <ul class="nav nav-pills">
+        <li>
+          <a href="{{ path('admin_torneo') }}">Torneos</a>
+        </li>
+        <li>
+          <a href="{{ path('admin_equipo') }}">Equipos</a>
+        </li>
+        <li>
+          <a href="{{ path('admin_fecha') }}">Fechas</a>
+        </li>
+        <li>
+          <a href="{{ path('admin_partido') }}">Partidos</a>
+        </li>
+        <li>
+          <a href="{{ path('admin_apuesta') }}">Apuestas</a>
+        </li>
+        <li>
+          <a href="{{ path('admin_user') }}">Usuarios</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  &nbsp;
+{% endblock %}
+        

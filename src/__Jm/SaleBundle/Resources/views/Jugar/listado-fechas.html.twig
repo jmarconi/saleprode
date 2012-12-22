@@ -1,0 +1,12 @@
+{% extends 'JmSaleBundle:Default:base.html.twig' %}
+{% block title %}Listado de fechas... !{% endblock %}
+
+
+
+{% block body %}
+  {% include  'JmSaleBundle:Fecha:block/listado.html.twig' with {'fechas': fechas}%}
+{% endblock %}
+
+{% block footerLeft %}
+  
+{% endblock %}

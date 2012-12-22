@@ -1,0 +1,10 @@
+Jm\SaleBundle\Entity\Equipo:
+  properties:
+    nombre:
+      - NotBlank: ~
+    nombre_corto:
+      - NotBlank: ~
+    iniciales:
+      - NotBlank: ~
+    file:
+      - Image: ~

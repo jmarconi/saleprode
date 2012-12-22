@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Demo Bundle{% endblock %}</title>
+        {% javascripts 'bundles/jmsale/js/*' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% block scripts %}
+          
+        {% endblock %}
+        <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+        {% stylesheets 'bundles/jmsale/css/*' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+    <body class='{% block bodyClass %}{% endblock %}'>
+      <section id="main-container">
+        {% block main %}
+          
+          {% block header %}
+            {% include 'JmSaleBundle:Default:header.html.twig'  %}
+          {% endblock %}
+          <section class="app-container">
+            {% block body %}
+
+            {% endblock %}
+          </section>
+          {% block footer %}
+            <footer class='navbar navbar-fixed-bottom'>
+              <div class='navbar-inner footer'>
+                <ul class='nav pull-left'>
+                  {% block footerLeft %}
+
+                  {% endblock %}
+                </ul>
+                <ul class='nav nav-center'>
+                  <li>
+                    <a class='brand' href='#'><img src='/saleprode/web/bundles/jmsale/img/saleprode_images/logo-saleprode_footer.jpg' width="141" height="24"  class="logo-footer"/></a>
+                  </li>
+                </ul>
+                <ul class='nav pull-right'>
+                  {% block footerRight %}
+
+                  {% endblock %}
+                </ul>
+              </div>
+            </footer>
+          {% endblock %}
+        {% endblock %}
+      </section>
+    </body>
+</html>

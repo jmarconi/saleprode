@@ -1,0 +1,48 @@
+{% extends 'JmSaleBundle:Default:admin-base.html.twig' %}
+{% block body %}
+<h1>Apuesta list</h1>
+
+<table class="records_list table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>User</th>
+            <th>Torneo</th>
+            <th>Fecha</th>
+            <th>Partido</th>
+            <th>Resultado</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('admin_apuesta_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.user.username }}</td>
+            <td>{{ entity.partido.fecha.torneo.nombre }}</td> 
+            <td>{{ entity.partido.fecha.id }}</td>  
+            <td>{{ entity.partido.titulo }}</td>
+            <td>{{ entity.resultado }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('admin_apuesta_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_apuesta_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('admin_apuesta_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock %}
